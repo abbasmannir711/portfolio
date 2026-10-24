@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+  <head>
+    <title>My Counter</title>
+
+    <style>
+      body {
+        background-color: lightgray;
+        min-height: 100vh;
+        margin: 0;
+        display: flex; /* ✔ gyara */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #countLabel {
+        display: block;
+        text-align: center;
+        font-size: 8em;
+        font-family: Helvetica, Arial, sans-serif;
+        margin-bottom: 20px;
+        color: black;
+      }
+
+      #Btncontainer {
+        text-align: center;
+      }
+
+      .top-buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 300px;
+        margin: auto;
+        margin-bottom: 10px;
+      }
+
+      .buttons {
+        padding: 10px 20px;
+        font-size: 1.5em;
+        color: #08100c;
+        background-color: lightblue;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition:
+          background-color 0.25s,
+          transform 0.2s;
+      }
+
+      #decreaseBtn:hover {
+        background-color: red;
+        color: white;
+        transform: scale(1.1);
+      }
+
+      #increaseBtn:hover {
+        background-color: green;
+        color: white;
+        transform: scale(1.1);
+      }
+
+      #resetBtn:hover {
+        background-color: #08100c;
+        color: white;
+        transform: scale(1.2);
+      }
+
+      .All {
+        background-color: gray;
+        box-shadow: -5px 5px 7px black;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .bungee-spice-regular {
+        font-family: "Bungee Spice", sans-serif;
+        font-size: 3rem;
+      }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <h1 class="bungee-spice-regular"><sup>MY</sup> COUNTER</h1>
+    <hr />
+
+    <div class="All">
+      <div id="Btncontainer">
+        <label id="countLabel">0</label>
+
+        <div class="top-buttons">
+          <button id="decreaseBtn" class="buttons">Decrease</button>
+          <button id="increaseBtn" class="buttons">Increase</button>
+        </div>
+
+        <button id="resetBtn" class="buttons">Reset</button>
+      </div>
+    </div>
+
+    <script>
+      const increaseBtn = document.getElementById("increaseBtn");
+      const decreaseBtn = document.getElementById("decreaseBtn");
+      const resetBtn = document.getElementById("resetBtn");
+      const countLabel = document.getElementById("countLabel");
+
+      // 🔹 Dauko value daga localStorage idan akwai
+      let count = Number(localStorage.getItem("counterValue")) || 0;
+
+      // 🔹 Nuna shi da zarar page ya load
+      updateCounter();
+
+      // INCREASE
+      increaseBtn.onclick = function () {
+        count++;
+        saveAndUpdate();
+      };
+
+      // DECREASE (ba zai wuce ƙasa da 0 ba)
+      decreaseBtn.onclick = function () {
+        if (count > 0) {
+          count--;
+          saveAndUpdate();
+        }
+      };
+
+      // RESET
+      resetBtn.onclick = function () {
+        count = 0;
+        saveAndUpdate();
+      };
+
+      // 🔹 Ajiya + update
+      function saveAndUpdate() {
+        localStorage.setItem("counterValue", count);
+        updateCounter();
+      }
+
+      // 🔹 Update UI
+      function updateCounter() {
+        countLabel.textContent = count;
+
+        if (count > 0) {
+          countLabel.style.color = "darkgreen";
+        } else {
+          countLabel.style.color = "black";
+        }
+      }
+    </script>
+  </body>
+</html>
