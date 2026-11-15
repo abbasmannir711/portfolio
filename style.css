@@ -173,6 +173,7 @@ header > img {
   object-fit: contain;
   margin: 0 auto 12px;
   transition : transform 0.5s ease; 
+  border-radius: 25px; 
 }
 
 hearder img:hover{
