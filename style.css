@@ -172,6 +172,12 @@ header > img {
   height: 125px;
   object-fit: contain;
   margin: 0 auto 12px;
+  transition : transform 0.5s ease; 
+}
+
+hearder img:hover{
+   transform: rotateX(5deg) rotateY(5deg) scale(1.05);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
 }
 
 header h1 {
@@ -375,6 +381,12 @@ form button:hover {
   margin: 20px auto;
   border: 2px solid var(--border);
   border-radius: var(--radius);
+  transition : transform 0.5s ease; 
+}
+
+#about img:hover{
+   transform: rotateX(5deg) rotateY(5deg) scale(1.05);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
 }
 
 /* 10. SKILLS */
@@ -465,8 +477,12 @@ body > aside img {
 
   margin: 20px auto 0;
   border-radius: var(--radius);
+  transition: transform 0.5s ease; 
 }
-
+goals img:hover{
+   transform: rotateX(5deg) rotateY(5deg) scale(1.05);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
 body > aside {
   width: min(var(--container), calc(100% - 40px));
   margin: 30px auto;
