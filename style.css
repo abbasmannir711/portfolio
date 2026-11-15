@@ -174,9 +174,10 @@ header > img {
   margin: 0 auto 12px;
   transition : transform 0.5s ease; 
   border-radius: 25px; 
+  cursor: pointer; 
 }
 
-hearder img:hover{
+header img:hover{
    transform: rotateX(5deg) rotateY(5deg) scale(1.05);
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
 }
@@ -378,7 +379,7 @@ form button:hover {
   width: min(100%, 320px);
   max-height: 380px;
   object-fit: cover;
-
+  cursor: pointer; 
   margin: 20px auto;
   border: 2px solid var(--border);
   border-radius: var(--radius);
@@ -475,12 +476,12 @@ body > aside img {
   max-width: 550px;
   max-height: 420px;
   object-fit: cover;
-
+  cursor: pointer; 
   margin: 20px auto 0;
   border-radius: var(--radius);
   transition: transform 0.5s ease; 
 }
-goals img:hover{
+#goals img:hover{
    transform: rotateX(5deg) rotateY(5deg) scale(1.05);
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
 }
